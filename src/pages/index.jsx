@@ -5,13 +5,19 @@ import Screen from "../componets/Screen/Screen";
 const Page = () => {
   const [gridCount, setGridCount] = useState(1);
   const addGrid = () => {
-    setGridCount(gridCount + 1);
+    setGridCount(pre => {
+      return pre < 15 ?
+        pre + 1 : 15
+    });
   };
   const handleRemove = () => {
-    setGridCount(gridCount - 1);
+    setGridCount(pre => {
+      return pre > 1 ?
+        pre - 1 : 1
+    });
   };
   return (
-    <div>
+    <div style={{ padding: "13px 9px 0" }}>
       <Screen gridCount={gridCount} />
       <Footer
         gridCount={gridCount}

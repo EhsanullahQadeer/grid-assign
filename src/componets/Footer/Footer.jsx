@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: "13px",
     left: 0,
     width: "100%",
-    padding: "0 30px",
+    padding: "0 15px",
     alignItems: "center",
     boxSizing: "border-box",
   },
@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
   lastDiv: {
     display: "flex",
     columnGap: "10px",
+    justifyContent: "end",
     flex: "1",
   },
   firstControl: {
@@ -90,6 +91,17 @@ const useStyles = makeStyles((theme) => ({
     width: "100px",
     height: "100px",
   },
+  visible: {
+    opacity: "1",
+    transform: " scale(1)",
+    transition: "opacity 0.5s, transform 0.5s"
+  }
+  , unVisible: {
+    opacity: "0",
+    transform: "scale(0)",
+    transition: "opacity 0.5s, transform 0.5s"
+  }
+
 }));
 const Footer = ({ handleClick, handleRemove, gridCount }, props) => {
   const classes = useStyles(props);
@@ -97,11 +109,11 @@ const Footer = ({ handleClick, handleRemove, gridCount }, props) => {
     <div className={classes.main}>
       <div className={classes.btns}>
         <div
-          className={`${classes.addBtn} ${gridCount >= 15 ? "unVisible" : ""}`}
+          className={`${classes.addBtn} ${gridCount >= 15 ? classes.unVisible : classes.visible}`}
           onClick={handleClick}
         ></div>
         <div
-          className={`${classes.removeBtn} ${gridCount <= 1 ? "unVisible" : ""}
+          className={`${classes.removeBtn} ${gridCount <= 1 ? classes.unVisible : classes.visible}
           `}
           onClick={handleRemove}
         ></div>
@@ -127,9 +139,8 @@ const Footer = ({ handleClick, handleRemove, gridCount }, props) => {
       <Hidden smDown>
         <div className={classes.lastDiv}>
           <div
-            className={`${classes.firstControl} ${
-              gridCount == 15 ? "visible" : "unVisible"
-            } `}
+            className={`${classes.firstControl} ${gridCount == 15 ? classes.visible : classes.unVisible
+              } `}
           >
             <img src={Item15} alt="user" />
           </div>
