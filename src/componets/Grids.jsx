@@ -4,6 +4,7 @@ import { makeStyles } from "@mui/styles";
 import { style } from "../utilties/style";
 import { animator } from "./Animator";
 import { GridItem, Users } from "./gridStyle";
+
 const AllGrids = ({ gridCount, setisSmScreen, isSmScreen }) => {
   const [isAniamtion, setIsAnimation] = useState(true);
   useEffect(() => {
@@ -49,6 +50,7 @@ const AllGrids = ({ gridCount, setisSmScreen, isSmScreen }) => {
       <GridItem className={`${classes.one} grid-item`}>
         <Users className={isAniamtion ? classes.girdAnimation : ""}> </Users>
       </GridItem>
+
       <GridItem
         className={`${gridCount < 2 ? classes.hide : "grid-item"} ${
           classes.two
@@ -56,6 +58,7 @@ const AllGrids = ({ gridCount, setisSmScreen, isSmScreen }) => {
       >
         <Users className={isAniamtion ? classes.girdAnimation : ""}> </Users>
       </GridItem>
+
       <GridItem
         className={`${gridCount < 3 ? classes.hide : "grid-item"} ${
           classes.three
@@ -71,7 +74,7 @@ const AllGrids = ({ gridCount, setisSmScreen, isSmScreen }) => {
         <Users className={isAniamtion ? classes.girdAnimation : ""}> </Users>
       </GridItem>
       <GridItem
-        className={`${gridCount < 5 ? classes.hide : "grid-item"} ${
+        className={` ${gridCount < 5 ? classes.hide : "grid-item"} ${
           classes.five
         }`}
       >

@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import Footer from "../componets/Footer/Footer";
 import Screen from "../componets/Screen/Screen";
-
+import bgImg from "../assets/background.svg";
 const useStyles = makeStyles((theme) => ({
+  gridMainBg: {
+    backgroundImage: `url(${bgImg})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+    height: "100svh",
+    width: "100%",
+  },
   gridMain: {
     padding: "13px 9px 0",
   },
@@ -29,18 +37,20 @@ const Page = () => {
 
   const classes = useStyles();
   return (
-    <div className={classes.gridMain}>
-      <Screen
-        gridCount={gridCount}
-        setisSmScreen={setisSmScreen}
-        isSmScreen={isSmScreen}
-      />
-      <Footer
-        gridCount={gridCount}
-        handleClick={addGrid}
-        handleRemove={handleRemove}
-        isSmScreen={isSmScreen}
-      />
+    <div className={classes.gridMainBg}>
+      <div className={classes.gridMain}>
+        <Screen
+          gridCount={gridCount}
+          setisSmScreen={setisSmScreen}
+          isSmScreen={isSmScreen}
+        />
+        <Footer
+          gridCount={gridCount}
+          handleClick={addGrid}
+          handleRemove={handleRemove}
+          isSmScreen={isSmScreen}
+        />
+      </div>
     </div>
   );
 };
