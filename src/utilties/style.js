@@ -2,10 +2,10 @@ const g1 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
       },
     },
   };
@@ -15,11 +15,11 @@ const g2 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `'one two'`,
       },
       [theme.breakpoints.down("sm")]: {
@@ -43,10 +43,10 @@ const g3 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one three"
                             "two three"`,
         gridGap: "5px",
@@ -77,11 +77,11 @@ const g4 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one three"
                             "two four"`,
       },
@@ -116,11 +116,11 @@ const g5 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one one one two two two"
                             "three three four four five five"`,
       },
@@ -156,11 +156,11 @@ const g6 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three"
                             "four five six"`,
       },
@@ -197,11 +197,11 @@ const g7 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one one one one two two two two three three three three"
                             "four four four five five five six six six seven seven seven"`,
       },
@@ -241,11 +241,11 @@ const g8 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "five six seven eight"`,
       },
@@ -288,11 +288,11 @@ const g9 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "five two three four"
@@ -353,11 +353,11 @@ const g10 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "five two three nine"
@@ -426,11 +426,11 @@ const g11 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -510,11 +510,11 @@ const g12 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -599,11 +599,11 @@ const g13 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -693,11 +693,11 @@ const g14 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -793,11 +793,11 @@ const g15 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 80px)",
+      height: "calc(100svh - 80px)",
       gridAutoFlow: "dense",
       gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        height: "calc(100vh - 150px)",
+        height: "calc(100svh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
