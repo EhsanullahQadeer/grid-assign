@@ -1,9 +1,12 @@
-const g1 = () => {
+const g1 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
+      },
     },
   };
   return obj;
@@ -12,13 +15,16 @@ const g2 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
-        gridTemplateAreas: `'one'`,
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `'one two'`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -37,14 +43,17 @@ const g3 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
       [theme.breakpoints.up("sm")]: {
-        gridTemplateAreas: `'one two'`,
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one three"
                             "two three"`,
+        gridGap: "5px",
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -68,13 +77,17 @@ const g4 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one three"
                             "two four"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -103,38 +116,37 @@ const g5 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one one one two two two"
                             "three three four four five five"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+        gridTemplateAreas: `"one one"
+                            "two two"
+                            "three three"
+                            "four five"
+                           `,
+      },
     },
     one: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "one",
-      },
+      gridArea: "one",
     },
     two: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "two",
-      },
+      gridArea: "two",
     },
     three: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "three",
-      },
+      gridArea: "three",
     },
     four: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "four",
-      },
+      gridArea: "four",
     },
     five: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "five",
-      },
+      gridArea: "five",
     },
   };
   return obj;
@@ -144,43 +156,39 @@ const g6 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three"
                             "four five six"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+        gridTemplateAreas: `"one one"
+                            "two two"
+                            "three four"
+                            "five six "`,
+      },
     },
     one: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "one",
-      },
+      gridArea: "one",
     },
     two: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "two",
-      },
+      gridArea: "two",
     },
     three: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "three",
-      },
+      gridArea: "three",
     },
     four: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "four",
-      },
+      gridArea: "four",
     },
     five: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "five",
-      },
+      gridArea: "five",
     },
     six: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "six",
-      },
+      gridArea: "six",
     },
   };
   return obj;
@@ -189,48 +197,42 @@ const g7 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one one one one two two two two three three three three"
                             "four four four five five five six six six seven seven seven"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+        gridTemplateAreas: `"one one"
+        "two three"
+        "five four"
+        "six seven"`,
+      },
     },
     one: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "one",
-      },
+      gridArea: "one",
     },
     two: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "two",
-      },
+      gridArea: "two",
     },
     three: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "three",
-      },
+      gridArea: "three",
     },
     four: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "four",
-      },
+      gridArea: "four",
     },
     five: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "five",
-      },
+      gridArea: "five",
     },
     six: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "six",
-      },
+      gridArea: "six",
     },
     seven: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "seven",
-      },
+      gridArea: "seven",
     },
   };
   return obj;
@@ -239,53 +241,45 @@ const g8 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "five six seven eight"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+        gridTemplateAreas: `"one two"
+       "five three"
+       "six four"
+        "seven eight"`,
+      },
     },
     one: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "one",
-      },
+      gridArea: "one",
     },
     two: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "two",
-      },
+      gridArea: "two",
     },
     three: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "three",
-      },
+      gridArea: "three",
     },
     four: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "four",
-      },
+      gridArea: "four",
     },
     five: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "five",
-      },
+      gridArea: "five",
     },
     six: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "six",
-      },
+      gridArea: "six",
     },
     seven: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "seven",
-      },
+      gridArea: "seven",
     },
     eight: {
-      [theme.breakpoints.up("sm")]: {
-        gridArea: "eight",
-      },
+      gridArea: "eight",
     },
   };
   return obj;
@@ -294,9 +288,11 @@ const g9 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "five two three four"
@@ -304,7 +300,6 @@ const g9 = (theme) => {
                             "six seven eight nine"
                             "six seven eight nine"`,
       },
-      gridGap: "5px",
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -330,7 +325,6 @@ const g9 = (theme) => {
       [theme.breakpoints.up("sm")]: {
         gridArea: "five",
       },
-      idArea: "five",
     },
     six: {
       [theme.breakpoints.up("sm")]: {
@@ -359,9 +353,11 @@ const g10 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "five two three nine"
@@ -369,7 +365,9 @@ const g10 = (theme) => {
                             "six seven eight ten"
                             "six seven eight ten"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -398,7 +396,6 @@ const g10 = (theme) => {
     },
     six: {
       [theme.breakpoints.up("sm")]: {
-        // gridArea: "2 / 2 / 4 / 3",
         gridArea: "six",
       },
     },
@@ -429,9 +426,11 @@ const g11 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -445,7 +444,9 @@ const g11 = (theme) => {
                             "seven eight nine eleven"
                             "seven eight nine eleven"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -509,9 +510,11 @@ const g12 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -525,7 +528,9 @@ const g12 = (theme) => {
                             "seven eight nine twelve"
                             "seven eight nine twelve"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -594,9 +599,11 @@ const g13 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -610,7 +617,9 @@ const g13 = (theme) => {
                             "seven nine ten thirteen"
                             "seven nine ten thirteen"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -684,9 +693,11 @@ const g14 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -700,7 +711,9 @@ const g14 = (theme) => {
                             "seven nine eleven fourteen"
                             "seven nine eleven fourteen"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {
@@ -780,9 +793,11 @@ const g15 = (theme) => {
   let obj = {
     gridContainer: {
       display: "grid",
-      height: "calc(100vh - 150px)",
+      height: "calc(100vh - 80px)",
       gridAutoFlow: "dense",
+      gridGap: "5px",
       [theme.breakpoints.up("sm")]: {
+        height: "calc(100vh - 150px)",
         gridTemplateAreas: `"one two three four"
                             "one two three four"
                             "one two three four"
@@ -796,7 +811,9 @@ const g15 = (theme) => {
                             "seven nine eleven fourteen"
                             "seven nine eleven fourteen"`,
       },
-      gridGap: "5px",
+      [theme.breakpoints.down("sm")]: {
+        gridGap: "3px",
+      },
     },
     one: {
       [theme.breakpoints.up("sm")]: {

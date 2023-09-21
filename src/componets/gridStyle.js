@@ -16,6 +16,9 @@ const delayedFadeIn = keyframes`
 export const GridItem = styled(Grid)`
   animation: ${delayedFadeIn} 0.75s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 15px;
+  @media (max-width: 600px) {
+    border-radius: 10px;
+  }
 `;
 
 export const Users = styled.div`
@@ -25,4 +28,7 @@ export const Users = styled.div`
   background-position: center center;
   background-size: cover;
   border-radius: 15px;
+  @media (max-width: 600px) {
+    border-radius: 10px;
+  }
 `;

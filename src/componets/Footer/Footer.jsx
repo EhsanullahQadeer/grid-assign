@@ -57,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
     gap: "24px",
     overflow: "hidden",
     position: "relative",
-
     backgroundColor: "#212a3d",
   },
   icons: {
@@ -94,53 +93,87 @@ const useStyles = makeStyles((theme) => ({
   visible: {
     opacity: "1",
     transform: " scale(1)",
-    transition: "opacity 0.5s, transform 0.5s"
-  }
-  , unVisible: {
+    transition: "opacity 0.5s, transform 0.5s",
+  },
+  unVisible: {
     opacity: "0",
     transform: "scale(0)",
-    transition: "opacity 0.5s, transform 0.5s"
-  }
-
+    transition: "opacity 0.5s, transform 0.5s",
+  },
+  "@media (max-width: 600px)": {
+    main: {
+      padding: "0 10px",
+      bottom: "10px",
+    },
+    iconsDiv: {
+      width: "290px",
+      height: "42px",
+      gap: "2px",
+    },
+    icons: {
+      transform: "scale(0.6)",
+      "&:hover": {
+        transform: "scale(0.7)",
+      },
+    },
+    addBtn: {
+      width: "28px",
+      height: "28px",
+    },
+    removeBtn: {
+      width: "28px",
+      height: "28px",
+    },
+  },
 }));
-const Footer = ({ handleClick, handleRemove, gridCount }, props) => {
+const Footer = (
+  { handleClick, handleRemove, gridCount, isSmScreen },
+  props
+) => {
   const classes = useStyles(props);
   return (
     <div className={classes.main}>
       <div className={classes.btns}>
         <div
-          className={`${classes.addBtn} ${gridCount >= 15 ? classes.unVisible : classes.visible}`}
+          className={`${classes.addBtn} ${
+            isSmScreen && gridCount >= 8
+              ? classes.unVisible
+              : gridCount >= 15
+              ? classes.unVisible
+              : classes.visible
+          }`}
           onClick={handleClick}
         ></div>
         <div
-          className={`${classes.removeBtn} ${gridCount <= 1 ? classes.unVisible : classes.visible}
+          className={`${classes.removeBtn} ${
+            gridCount <= 1 ? classes.unVisible : classes.visible
+          }
           `}
           onClick={handleRemove}
         ></div>
       </div>
 
-      <Hidden smDown>
-        <div className={classes.centerDiv}>
-          <div className={classes.iconsDiv}>
-            <img className={classes.icons} src={commentImg} alt="cooment" />
-            <img className={classes.icons} src={videoImg} alt="video" />
-            <img className={classes.icons} src={micImg} alt="mic" />
+      <div className={classes.centerDiv}>
+        <div className={classes.iconsDiv}>
+          <img className={classes.icons} src={commentImg} alt="cooment" />
+          <img className={classes.icons} src={videoImg} alt="video" />
+          <img className={classes.icons} src={micImg} alt="mic" />
 
-            <div className={`${classes.callIcon} ${classes.icons}`}>
-              <img src={callImg} alt="call" />
-            </div>
-            <img className={classes.icons} src={handImg} alt="hand" />
-            <img className={classes.icons} src={likeImg} alt="like" />
-            <img className={classes.icons} src={dislikeImg} alt="dislike" />
+          <div className={`${classes.callIcon} ${classes.icons}`}>
+            <img src={callImg} alt="call" />
           </div>
+          <img className={classes.icons} src={handImg} alt="hand" />
+          <img className={classes.icons} src={likeImg} alt="like" />
+          <img className={classes.icons} src={dislikeImg} alt="dislike" />
         </div>
-      </Hidden>
+      </div>
 
       <Hidden smDown>
         <div className={classes.lastDiv}>
           <div
-            className={`${classes.firstControl} ${gridCount == 15 ? classes.visible : classes.unVisible
-              } `}
+            className={`${classes.firstControl} ${
+              gridCount == 15 ? classes.visible : classes.unVisible
+            } `}
           >
             <img src={Item15} alt="user" />
           </div>

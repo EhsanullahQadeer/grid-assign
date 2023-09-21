@@ -7,11 +7,11 @@ const useStyle = makeStyles({
     backgroundColor: "#000",
   },
 });
-const Screen = ({ gridCount }, props) => {
+const Screen = ({ gridCount,isSmScreen,setisSmScreen }, props) => {
   return (
     <div>
       <div>
-        <Grids gridCount={gridCount} />
+        <Grids gridCount={gridCount} isSmScreen={isSmScreen} setisSmScreen={setisSmScreen}/>
       </div>
     </div>
   );
